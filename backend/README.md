@@ -151,7 +151,7 @@ GET http://localhost:8080/todos
 - (배점 1점) 요청의 본문에 `title` 필드만 작성하거나 `title`, `done` 필드 모두 작성하는 경우, Todo 항목이 추가되는가?
 - (배점 0.5점) 요청의 본문에 `done` 필드만 작성하는 경우, Todo 항목이 추가되지 않고 에러 메세지가 나오는가?
 
-#### 요구사항1. 요청의 본문에 `title`, `done` 필드 모두 작성하는 경우
+#### 3.2.1 요청의 본문에 `title`, `done` 필드 모두 작성하는 경우
 
 > API 명세
 
@@ -178,7 +178,7 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-#### 요구사항2. 요청의 본문에 `title` 필드만 작성하는 경우
+#### 3.2.2 요청의 본문에 `title` 필드만 작성하는 경우
 
 - `todo` 모델 정의 시 `done` 필드에 기본값(`false`)이 설정되어 있으므로 `title` 필드 값만 요청의 본문에 실어도 문제 없이 동작해야 합니다.
 
@@ -207,7 +207,7 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-#### 요구사항3. 요청의 본문에 `done` 필드만 작성하는 경우
+#### 3.2.3 요청의 본문에 `done` 필드만 작성하는 경우
 
 - `todo` 모델 정의 시 `title` 필드는 `null`을 허용하지 않으며, 기본값이 없으므로 요청의 본문에 `done` 필드만 넣는 경우 서버 에러가 발생합니다.
 
@@ -231,14 +231,14 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-### 3.4 특정 ID의 Todo 조회 (총 배점 1.5점)
+### 3.3 특정 ID의 Todo 조회 (총 배점 1.5점)
 
 #### 채점 가이드
 
 - (배점 1점) 존재하는 Todo ID 로 조회하는 경우, 데이터가 잘 응답되는가?
 - (배점 0.5점) 존재하지 않는 Todo ID 로 조회하는 경우, 에러 메세지가 잘 응답되는가?
 
-#### 3.4.1 존재하는 Todo ID 로 조회하는 경우
+#### 3.3.1 존재하는 Todo ID 로 조회하는 경우
 
 > API 명세
 
@@ -259,7 +259,7 @@ GET http://localhost:8080/todos/1
 }
 ```
 
-#### 3.4.2 존재하지 않는 Todo ID 로 조회하는 경우
+#### 3.3.2 존재하지 않는 Todo ID 로 조회하는 경우
 
 > API 명세
 
@@ -276,7 +276,7 @@ GET http://localhost:8080/todos/10
 }
 ```
 
-### 3.5 특정 ID의 Todo 수정 (총 배점 1.5점)
+### 3.4 특정 ID의 Todo 수정 (총 배점 1.5점)
 
 #### 채점 가이드
 
@@ -285,7 +285,7 @@ GET http://localhost:8080/todos/10
   - 두 속성 중 하나라도 수정되었다면 `updatedAt` 컬럼 값이 변경됩니다.
 - (배점 0.5점) 존재하지 않는 Todo ID 로 삭제하는 경우, 에러 메세지가 잘 응답되는가?
 
-#### 3.5.1 존재하는 Todo ID 로 수정하는 경우
+#### 3.4.1 존재하는 Todo ID 로 수정하는 경우
 
 > API 명세
 
@@ -311,7 +311,7 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-#### 3.5.2 존재하지 않는 Todo ID 로 수정하는 경우
+#### 3.4.2 존재하지 않는 Todo ID 로 수정하는 경우
 
 > API 명세
 
@@ -333,14 +333,14 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-### 3.6 특정 ID의 Todo 삭제 (총 배점 1.5점)
+### 3.5 특정 ID의 Todo 삭제 (총 배점 1.5점)
 
 #### 채점 가이드
 
 - (배점 1점) 존재하는 Todo ID 로 삭제하는 경우, Todo가 잘 삭제되는가?
 - (배점 0.5점) 존재하지 않는 Todo ID 로 삭제하는 경우, 에러 메세지가 잘 응답되는가?
 
-#### 3.6.1 존재하는 Todo ID 로 삭제하는 경우
+#### 3.5.1 존재하는 Todo ID 로 삭제하는 경우
 
 > API 명세
 
@@ -358,7 +358,7 @@ DELETE http://localhost:8080/todos/1
 }
 ```
 
-#### 3.6.2 존재하지 않는 Todo ID 로 삭제하는 경우
+#### 3.5.2 존재하지 않는 Todo ID 로 삭제하는 경우
 
 > API 명세
 

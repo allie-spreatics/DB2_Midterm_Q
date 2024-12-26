@@ -79,6 +79,7 @@ frontend/
 
 - (배점 1점) `getTodos()` 함수는 `GET` `https://jsonplaceholder.typicode.com/todos` 요청의 응답 결과에서 맨 처음부터 10개의 원소만 잘라내어 투두 목록에 초기 Todo를 표시해야 합니다.
   > 힌트. `slice()` 메서드
+  - 데이터를 불러올 때, fetch, axios, ajax 중 원하는 메소드 사용 가능합니다.
 - (배점 1점) HTML 문서의 DOM 내용이 완전히 로드되었을 때, 초기 Todo 목록을 불러오는 `getTodos()` 함수가 실행됩니다.
   > 힌트. `DOMContentLoaded` 이벤트
 
